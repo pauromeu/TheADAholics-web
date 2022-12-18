@@ -10,7 +10,6 @@ layout: default
 - [Methods](#methods)
 - [Proposed timeline](#proposed-timeline)
 - [Organisation within the team](#organisation-within-the-team)
-- [Questions for the TAs](#questions-for-the-tas)
 
 ## Abstract
 
@@ -198,10 +197,6 @@ end
 ### Small image
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
 
 ### Definition lists can be used with HTML syntax.
