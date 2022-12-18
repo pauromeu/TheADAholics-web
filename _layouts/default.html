@@ -27,12 +27,14 @@
       {% endif %}
     </header>
     
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    
     <body>
       <center><iframe src="./figures/ethnicities.html" height="800" width="1200" frameBorder="0"></iframe></center>
     </body>
 
-    <main id="content" class="main-content" role="main">
-      {{ content }}
+    
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
