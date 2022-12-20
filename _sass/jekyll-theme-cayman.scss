@@ -107,8 +107,11 @@ a {
 
 .page-header {
   color: $header-heading-color;
-  text-align: center;
+  //text-align: center;
   //background-color: $header-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   height: 56vw;
   background-position: center;
