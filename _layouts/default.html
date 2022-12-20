@@ -28,7 +28,239 @@
     </header>
     
     <main id="content" class="main-content" role="main">
-      {{ content }}  
+      <hr>
+<h2 id="layout-default">layout: default</h2>
+<h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#research-questions">Research Questions</a></li>
+<li><a href="#proposed-additional-datasets-and-files">Proposed additional datasets and files</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#proposed-timeline">Proposed timeline</a></li>
+<li><a href="#organisation-within-the-team">Organisation within the team</a></li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices: what genres to focus on, which director and actors bring the most added value, what budget to spend? With such a big movie database, we can expect to find some patterns for which those choices lead to more successful movies. But then again, what makes a movie successful? From profitability to perenniality, we shall investigate different success indicators. Ideally, the goal for our data story would be to draw a generator for the next successful movie: a user would select for instance a genre of interest and we would suggest the ideal combo of actors, director, budget, diversity, etc.</p>
+<h2 id="research-questions">Research Questions</h2>
+<p>Using our current and future analysis, we aim to answer the following questions:</p>
+<ul>
+<li>What budget should be invested for a successful film? </li>
+<li>Which actors and directors bring the most added value to a movie?</li>
+<li>Investigate the correlation between the choice of genres and movie profitability. What genres are the most profitable?</li>
+<li>What is the link between an actor&#39;s success and his/her physical features (gender, age, height, ethnicity)</li>
+<li>What release months are most profitable? </li>
+<li>What countries release the most profitable winning movie? Is this evolving with time? </li>
+<li>What types of roles will be suitable for which actors?</li>
+<li>What are the best plot lines? (NLP, if possible)</li>
+</ul>
+<h2 id="proposed-additional-datasets-and-files">Proposed additional datasets and files</h2>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/omarhanyy/imdb-top-1000">IMDB top 1000 movies dataset</a>: The goal of this dataset is to obtain information on IMDB ratings of different movies, directors, and actors. </li>
+<li><a href="https://github.com/jeremy-lee93/dsc-mod-1-project-v2-1-onl01-dtsc-pt-052620/blob/master/IMDb_budgets.csv">IMDB budget</a>: The added value of this dataset is mainly the budget spent and other features which we already have to complete NaN.</li>
+<li>Wikipedia pageview statistics for movies: dataset crowed from Wikipedia pageview statistics public API. <code>utils/extract_wikipedia_pageview_statistics.py</code> is the script for obtaining this dataset. Its input is a dataframe with movie names and its output is a dataframe with pageview statistics.</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="step-1-data-loading">Step 1: Data loading</h3>
+<ul>
+<li><code>movies</code>: dataframe including information from CMU movies</li>
+<li><code>characters</code>: dataframe including information from CMU movie characters</li>
+<li><code>imdb_top_1000</code>: dataframe including information from top 1000 movies from IMDB</li>
+<li><code>imdb_budget</code>: dataframe including information from 3828 IMDB movies</li>
+<li><code>wikipedia_pageviews</code>: dataframe including information on movies’ daily average pageviews</li>
+</ul>
+<h3 id="step-2-cleaning-pre-processing-of-data">Step 2: Cleaning &amp; Pre-processing of data</h3>
+<p>For all datasets: Convert number to correct data types (int, float). Check outliers either by web proofing (ex: check on the internet what is the minimum length of ever-made movies) or by common sense (ex: actor height cannot be above 4m). The other outliers are filtered. Replace corrupted elements when finding data on the internet. Remove encoding if there are any in the datasets. </p>
+<h4 id="step-2-1-movies">Step 2.1: Movies</h4>
+<p>Creation of a weighted IMDB rating to account for rating and number of votes. We also account for inflation rates to modify all revenue, profit, and budget with the US inflation rate since 1913.  Proceed with outer merge based on datasets movies, imdb_top_1000, imdb_budget, wikipedia_pageviews. The goal of this outer merge is to combine common features while conserving the original dataset length to still be able to investigate the data fully. The redundant columns between datasets are used to fill in missing values to have a more complete dataset. </p>
+<h4 id="step-2-2-characters">Step 2.2: Characters</h4>
+<p>The character dataset preprocessing work was aimed at finding the ethnicities of the characters/authors. The original dataset only provided freebase ids which had to be translated into “readable” ethnicity. To solve this problem, a script has been created to obtain the identifier-label equivalences from Wikidata. In addition, manual work has also been done classifying the main races. Five main groups are extracted to ease comparison: Black, Asian, Indian, Latin, and White people. All the implementation information can be found in the main file.</p>
+<h3 id="step-3-exploratory-analysis">Step 3: Exploratory analysis</h3>
+<h4 id="step-3-1-movies">Step 3.1: Movies</h4>
+<p>A movie involves very diverse features. A correlation heat map is created to investigate links between features. The focus is put on distribution and link to profitability and success on the following features: release month, genres, profit VS budget for top movies, actors, and directors.</p>
+<p align="center">
+  <img src="./figures/success_month.png" alt="success month" width="600"/>
+</p>
+
+<h4 id="step-3-2-characters">Step 3.2: Characters</h4>
+<p>A movie is nothing without its actors. To analyze the success of a film, it is essential to look at its characters and by whom they are portrayed. The main objective of this point is to discover what are the characteristics that make an actor successful and, therefore, the film in which he participates. The character dataset allows us to study the main physical characteristics of the actors: gender, height, ethnicity, and age in which they participated in the movie. For instance, the following graph shows the distribution of ethnicities among actors and demonstrates the existence of a racial trend in the film industry</p>
+<p align="center">
+ <img src="./figures/characters_ethnicities.png" alt="characters ethnicities" width="600"/>
+</p>
+
+<h4 id="step-3-3-cross-movies-and-characters-results">Step 3.3: Cross movies and characters results</h4>
+<p>For the next milestone and to determine the overall success of the films, the analyses made for the films and the characters or actors that have been made independently for this installment will be cross-referenced.</p>
+<h4 id="step-3-4-clustering-movies-according-to-plot-type">Step 3.4: Clustering movies according to plot type</h4>
+<p>Using the processed summaries with NLP we would analyze movie plots and try to separate them into clusters (happy ending vs sad ending…) (inspiration: “The Seven Basic Plots: Why We Tell Stories” - Christopher Booker).</p>
+<h4 id="step-3-5-countries">Step 3.5: Countries</h4>
+<p>To assert how representative our dataset is of movies made in different parts of the world, we decided to plot the distribution of movies by country. As expected, we note that almost half the dataset is made up of American movies.
+We also want to know if this distribution has maybe changed over time, so we separate the dataset approximately in two: movies made before 1985 and movies made after 1985 and we run the previous analysis on the two subsets. We can see that the United States dominates movie production (or at least the dataset) but that Indian cinema has become more and more important. We will keep looking into these relations for the next milestone.</p>
+<h3 id="step-4-try-to-advise-choices-of-features-for-a-successful-movie">Step 4: Try to advise choices of features for a successful movie</h3>
+<p>Cluster all the above investigations across genres to advise the creation of successful movies. </p>
+<h2 id="proposed-timeline">Proposed timeline</h2>
+<ul>
+<li>21.11.22 Pause project for Homework 2.</li>
+<li>02.12.22 Homework 2 deadline</li>
+<li>10.12.22 Rough draft of the datastory.</li>
+<li>15.12.22 Complete all code implementations and visualizations relevant to the analysis.</li>
+<li>20.12.22 Complete datastory.</li>
+<li>23.12.22 Milestone 3 deadline</li>
+</ul>
+<h2 id="organisation-within-the-team">Organisation within the team</h2>
+<table>
+<thead>
+<tr>
+<th>Teammate</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pau</td>
+<td>Clustering of actor physical features and success across genres.</td>
+</tr>
+<tr>
+<td>Mehdi</td>
+<td>Investigate best plot lines across genres and differences between countries</td>
+</tr>
+<tr>
+<td>Nikolay</td>
+<td>Clustering genres into finite categories</td>
+</tr>
+<tr>
+<td>Olivia</td>
+<td>Find optimal budget across genres</td>
+</tr>
+<tr>
+<td>All</td>
+<td>Creation of the git webpage and interactive plots to find “the next successful movie”</td>
+</tr>
+</tbody>
+</table>
+<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+<p><a href="./another-page.html">Link to another page</a>.</p>
+<p>There should be whitespace between paragraphs.</p>
+<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
+<h1 id="header-1">Header 1</h1>
+<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
+<h2 id="header-2">Header 2</h2>
+<blockquote>
+<p>This is a blockquote following a header.</p>
+<p>When something is important enough, you do it even if the odds are not in your favor.</p>
+</blockquote>
+<h3 id="header-3">Header 3</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// Javascript code with syntax highlighting.</span>
+<span class="hljs-keyword">var</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> = function <span class="hljs-title">lang</span><span class="hljs-params">(l)</span></span> {
+  dateformat.i18n = require(<span class="hljs-string">'./lang/'</span> + l)
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<pre><code class="lang-ruby"># Ruby code <span class="hljs-built_in">with</span> syntax highlighting
+GitHubPages::<span class="hljs-keyword">Dependencies</span>.gems.each <span class="hljs-built_in">do</span> |<span class="hljs-type">gem</span>, version|
+  <span class="hljs-type">s</span>.add_dependency(gem, <span class="hljs-string">"= #{version}"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="header-4">Header 4</h4>
+<ul>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+</ul>
+<h5 id="header-5">Header 5</h5>
+<ol>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+</ol>
+<h6 id="header-6">Header 6</h6>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">head1</th>
+<th style="text-align:left">head two</th>
+<th style="text-align:left">three</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ok</td>
+<td style="text-align:left">good swedish fish</td>
+<td style="text-align:left">nice</td>
+</tr>
+<tr>
+<td style="text-align:left">out of stock</td>
+<td style="text-align:left">good and plenty</td>
+<td style="text-align:left">nice</td>
+</tr>
+<tr>
+<td style="text-align:left">ok</td>
+<td style="text-align:left">good <code>oreos</code></td>
+<td style="text-align:left">hmm</td>
+</tr>
+<tr>
+<td style="text-align:left">ok</td>
+<td style="text-align:left">good <code>zoute</code> drop</td>
+<td style="text-align:left">yumm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="there-s-a-horizontal-rule-below-this-">There&#39;s a horizontal rule below this.</h3>
+<hr>
+<h3 id="here-is-an-unordered-list-">Here is an unordered list:</h3>
+<ul>
+<li>Item foo</li>
+<li>Item bar</li>
+<li>Item baz</li>
+<li>Item zip</li>
+</ul>
+<h3 id="and-an-ordered-list-">And an ordered list:</h3>
+<ol>
+<li>Item one</li>
+<li>Item two</li>
+<li>Item three</li>
+<li>Item four</li>
+</ol>
+<h3 id="and-a-nested-list-">And a nested list:</h3>
+<ul>
+<li>level 1 item<ul>
+<li>level 2 item</li>
+<li>level 2 item<ul>
+<li>level 3 item</li>
+<li>level 3 item</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>level 1 item<ul>
+<li>level 2 item</li>
+<li>level 2 item</li>
+<li>level 2 item</li>
+</ul>
+</li>
+<li>level 1 item<ul>
+<li>level 2 item</li>
+<li>level 2 item</li>
+</ul>
+</li>
+<li>level 1 item</li>
+</ul>
+<h3 id="small-image">Small image</h3>
+<p><img src="https://github.githubassets.com/images/icons/emoji/octocat.png" alt="Octocat"></p>
+<h3 id="definition-lists-can-be-used-with-html-syntax-">Definition lists can be used with HTML syntax.</h3>
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+<pre><code>Long, single-<span class="hljs-built_in">line</span> code blocks should <span class="hljs-keyword">not</span> <span class="hljs-keyword">wrap</span>. They should horizontally scroll <span class="hljs-keyword">if</span> they are too <span class="hljs-keyword">long</span>. This <span class="hljs-built_in">line</span> should be <span class="hljs-keyword">long</span> enough <span class="hljs-built_in">to</span> demonstrate this.
+</code></pre><pre><code>The <span class="hljs-keyword">final</span> element.
+</code></pre> 
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
