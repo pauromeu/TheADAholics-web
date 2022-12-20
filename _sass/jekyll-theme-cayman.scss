@@ -109,7 +109,8 @@ a {
   color: $header-heading-color;
   text-align: center;
   //background-color: $header-bg-color;
-  background-size: 100vw 56vw;
+  background-size: cover;
+  height: calc(100vw * (var(0.56)));
   background-position: center;
   background-image: url(../../images/theater3.jpg);
   //background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
