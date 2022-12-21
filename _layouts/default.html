@@ -92,9 +92,9 @@
     </select>
 
     <p>Some text goes here</p>
-    <img id="image1" src="../figures/folder1/image1.jpg" alt="Image 1">
+    <img id="image1" src="./figures/folder1/image1.jpg" alt="Image 1">
     <p>Some text goes here</p>
-    <img id="image2" src="../figures/folder2/image1.jpg" alt="Image 2">
+    <img id="image2" src="./figures/folder2/image1.jpg" alt="Image 2">
     <p>Some text goes here</p>
 
     <script>
@@ -103,8 +103,8 @@
         var selectedValue = imageSelector.value;
 
         // Update the src attributes of the images
-        document.getElementById("image1").src = "../figures/folder1/" + selectedValue + ".jpg";
-        document.getElementById("image2").src = "../figures/folder2/" + selectedValue + ".jpg";
+        document.getElementById("image1").src = "./figures/folder1/" + selectedValue + ".jpg";
+        document.getElementById("image2").src = "./figures/folder2/" + selectedValue + ".jpg";
       }
     </script>
 
