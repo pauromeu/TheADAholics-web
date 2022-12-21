@@ -13,6 +13,38 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
+
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 100vh;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .cell {
+      border-radius: 5px;
+      border: 1px rgb(175, 175, 175) solid;
+      width: 400px;
+      height: 200px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 10px;
+    }
+
+    #select {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -31,7 +63,7 @@
     {% endif %} -->
   </header>
 
-  <main id="content" class="main-content" role="main">
+  <main id="content" class="main-content" role="main" style="visibility: visible;">
     <hr>
     <h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
     <h2 id="table-of-contents">Table of contents</h2>
@@ -52,19 +84,59 @@
       success indicators. Ideally, the goal for our data story would be to draw a generator for the next successful
       movie: a user would select for instance a genre of interest and we would suggest the ideal combo of actors,
       director, budget, diversity, etc.</p>
-    <h2 id="research-questions">Research Questions</h2>
-    <p>Using our current and future analysis, we aim to answer the following questions:</p>
-    <p>
-      What budget should be invested for a successful film?
-      Which actors and directors bring the most added value to a movie?
-      Investigate the correlation between the choice of genres and movie profitability. What genres are the most
-      profitable?
-      What is the link between an actor&#39;s success and his/her physical features (gender, age, height, ethnicity)
-      What release months are most profitable?
-      What countries release the most profitable winning movie? Is this evolving with time?
-      What types of roles will be suitable for which actors?
-      What are the best plot lines? (NLP, if possible)
-    </p>
+
+    <label for="image-selector">Choose an image:</label>
+    <select id="image-selector" onchange="displayImages()">
+      <option value="image1">Image 1</option>
+      <option value="image2">Image 2</option>
+    </select>
+
+    <p>Some text goes here</p>
+    <img id="image1" src="../figures/folder1/image1.jpg" alt="Image 1">
+    <p>Some text goes here</p>
+    <img id="image2" src="../figures/folder2/image1.jpg" alt="Image 2">
+    <p>Some text goes here</p>
+
+    <script>
+      function displayImages() {
+        var imageSelector = document.getElementById("image-selector");
+        var selectedValue = imageSelector.value;
+
+        // Update the src attributes of the images
+        document.getElementById("image1").src = "../figures/folder1/" + selectedValue + ".jpg";
+        document.getElementById("image2").src = "../figures/folder2/" + selectedValue + ".jpg";
+      }
+    </script>
+
+    <script>
+      function selectChanged() {
+        d = document.getElementById("select").value;
+        console.log(d);
+
+
+        document.querySelectorAll(".container").forEach(element => {
+          element.classList.add('hidden');
+        });
+        document.getElementById(d).classList.remove('hidden');
+
+      }
+    </script>
+
+    <div>
+      <h2 id="research-questions">Research Questions</h2>
+      <p>Using our current and future analysis, we aim to answer the following questions:</p>
+      <p>
+        What budget should be invested for a successful film?
+        Which actors and directors bring the most added value to a movie?
+        Investigate the correlation between the choice of genres and movie profitability. What genres are the most
+        profitable?
+        What is the link between an actor&#39;s success and his/her physical features (gender, age, height, ethnicity)
+        What release months are most profitable?
+        What countries release the most profitable winning movie? Is this evolving with time?
+        What types of roles will be suitable for which actors?
+        What are the best plot lines? (NLP, if possible)
+      </p>
+    </div>
     <h2 id="proposed-additional-datasets-and-files">Proposed additional datasets and files</h2>
     <ul>
       <li><a href="https://www.kaggle.com/datasets/omarhanyy/imdb-top-1000">IMDB top 1000 movies dataset</a>: The goal
