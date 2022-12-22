@@ -53,13 +53,28 @@
       Current genre:
     </label>
     <select id="image-selector1" onchange="displayImages(this)" class="dropdown-menu">
-      <option value="image1">Image 1</option>
-      <option value="image2">Image 2</option>
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Silent-Film">Silent</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
     </select>
 
 
     <h2 id="actors-directors">Best actors and directors to get a good movie</h2>
-    <img id="image1" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <img id="best_actors" src="./figures/best_actors/Action.svg" alt="Best Actors">
+    <img id="best_directors" src="./figures/best_directors/Action.svg" alt="Best directors">
     <p>Choosing a good cast and director for a movie are both crucial elements of the film-making process, as they can
       greatly impact the quality and success of a film.
     </p>
@@ -89,27 +104,22 @@
       decision that can have a significant impact on the film's quality and appeal.
     </p>
 
-
-    <label for="image-selector2">
-      Current genre:
-    </label>
-    <select id="image-selector2" onchange="displayImages(this)" class="dropdown-menu">
-      <option value="image1">Image 1</option>
-      <option value="image2">Image 2</option>
-    </select>
-
     <h2 id="genres-complement">How well this genre works with others?</h2>
     <img id="image2" src="./figures/folder2/image1.jpg" alt="Image 2">
-    <p>Some text goes here</p>
-
-
-    <label for="image-selector3">
-      Current genre:
-    </label>
-    <select id="image-selector3" onchange="displayImages(this)" class="dropdown-menu">
-      <option value="image1">Image 1</option>
-      <option value="image2">Image 2</option>
-    </select>
+    <p>We now investigate the best associations of genres. Having different genres for a movie can be important for a
+      number of reasons.</p>
+    <p>One reason is that it allows the movie to appeal to a wider audience. Different genres appeal to different
+      demographics, and by incorporating elements of multiple genres, a movie can attract a larger and more diverse
+      audience.</p>
+    <p> Another reason is that it can make the movie more interesting and unpredictable. By combining different genres,
+      a movie can keep the audience guessing and create a more unique and engaging viewing experience.</p>
+    <p>In addition, incorporating elements of different genres can also allow a movie to explore a wider range of themes
+      and ideas. For example, a comedy-drama might explore both light-hearted and serious themes, while a horror-comedy
+      might blend scares with laughs.</p>
+    <p>Overall, having different genres in a movie can help to make it more appealing, interesting, and dynamic, and can
+      allow it to explore a wider range of themes and ideas.</p>
+    <p>As before, we display here a network graph of the best 5 combinations to your chosen genre with an edge width
+      proportional to the success of this combination.</p>
 
     <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the cinema industry?</h2>
     <img id="image5" src="./figures/folder1/image1.jpg" alt="Image 1">
@@ -123,7 +133,6 @@
     <img id="image3" src="./figures/folder1/image1.jpg" alt="Image 1">
     <p>Some text goes here</p>
 
-
     <script>
       function displayImages(element) {
         // Get the selected value of the dropdown menu
@@ -136,8 +145,8 @@
         });
 
         // Update the src attributes of the images
-        document.getElementById("image1").src = "./figures/folder1/" + selectedValue + ".jpg";
-        document.getElementById("image2").src = "./figures/folder2/" + selectedValue + ".jpg";
+        document.getElementById("best_actors").src = "./figures/best_actors/" + selectedValue + ".svg";
+        document.getElementById("best_directors").src = "./figures/best_directors/" + selectedValue + ".svg";
       }
     </script>
 
