@@ -96,7 +96,7 @@ var layout = {};
 
 var layout = {barmode: 'stack',
   title: {
-    text:'Budget and profit of top 20 movies',
+    text:'Top 20 movies most profitable movies',
     font: {
       size: 24
     },
