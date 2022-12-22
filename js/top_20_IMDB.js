@@ -64,7 +64,7 @@ var layout = {
     },
   },
   yaxis: {automargin:true,
-    title: {
+    title: {'xanchor': 'center',
       text: 'IMDB rating weighted by number of votes',
       font: {
         size: 18,
