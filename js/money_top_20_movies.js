@@ -118,6 +118,7 @@ var layout = {
     automargin: true,
     title: {
       text: 'Profit [$]',
+      'xanchor': 'center',
       font: {
         size: 18,
         color: '#7f7f7f'
