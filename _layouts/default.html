@@ -14,37 +14,6 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
 
-  <style>
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      height: 100vh;
-      flex-wrap: wrap;
-      margin: auto;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .cell {
-      border-radius: 5px;
-      border: 1px rgb(175, 175, 175) solid;
-      width: 400px;
-      height: 200px;
-      margin-left: 5px;
-      margin-right: 5px;
-      margin-bottom: 10px;
-    }
-
-    #select {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 50px;
-    }
-  </style>
-
 </head>
 
 <body>
@@ -84,10 +53,8 @@
       Current genre:
     </label>
     <select id="image-selector1" onchange="displayImages(this)" class="dropdown-menu">
-      <optgroup class="dropdown-options">
-        <option value="image1">Image 1</option>
-        <option value="image2">Image 2</option>
-      </optgroup>
+      <option value="image1">Image 1</option>
+      <option value="image2">Image 2</option>
     </select>
 
 
@@ -100,10 +67,8 @@
       Current genre:
     </label>
     <select id="image-selector2" onchange="displayImages(this)" class="dropdown-menu">
-      <optgroup class="dropdown-options">
-        <option value="image1">Image 1</option>
-        <option value="image2">Image 2</option>
-      </optgroup>
+      <option value="image1">Image 1</option>
+      <option value="image2">Image 2</option>
     </select>
 
     <h2 id="genres-complement">How well this genre works with others?</h2>
@@ -115,10 +80,8 @@
       Current genre:
     </label>
     <select id="image-selector3" onchange="displayImages(this)" class="dropdown-menu">
-      <optgroup class="dropdown-options">
-        <option value="image1">Image 1</option>
-        <option value="image2">Image 2</option>
-      </optgroup>
+      <option value="image1">Image 1</option>
+      <option value="image2">Image 2</option>
     </select>
 
     <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the cinema industry?</h2>
@@ -130,7 +93,7 @@
     <p>Some text goes here</p>
 
     <h2 id="budget">Let's talk about money. How much you need to spend to get a succesful movie?</h2>
-    <img id="image1" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <img id="image3" src="./figures/folder1/image1.jpg" alt="Image 1">
     <p>Some text goes here</p>
 
 
