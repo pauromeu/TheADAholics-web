@@ -66,7 +66,7 @@ var layout = {
   },
   yaxis: {
     automargin: true,
-    title: {
+    title: {'xanchor': 'center',
       text: 'Average monthly pageviews in 2022',
       font: {
         size: 18,
@@ -76,5 +76,5 @@ var layout = {
   }
 };
 
-Plotly.newPlot('Top20_pageviews', data, layout);
+Plotly.newPlot('top_20_pageviews', data, layout);
 
