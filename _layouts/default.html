@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
-  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>  <!-- Copiercoller le truc de gauche -->
+  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script> <!-- Copiercoller le truc de gauche -->
 
 
 </head>
@@ -45,11 +45,16 @@
       success indicators. Ideally, the goal for our data story would be to draw a generator for the next successful
       movie: a user would select for instance a genre of interest and we would suggest the ideal combo of actors,
       director, budget, diversity, etc.</p>
-    
-    
-     <!-- Defini le placement du plot  -->
-    <div id='money_top_20_movies'><!-- Plotly chart will be drawn inside this DIV --></div>
-    <div id='top_20_pageviews'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+    <!-- Defini le placement du plot  -->
+    <div id='money_top_20_movies'>
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+
+    <div id='top_20_pageviews'>
+      <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
 
     <p>
       In the world of cinema there are very different genres. In this analysis, we have separated the data according to
@@ -198,10 +203,10 @@
 
     <script src="./js/modelPresenter.js">
     </script>
-    
+
     <script src="./js/money_top_20_movies.js">
     </script>
-    
+
     <script src="./js/top_20_pageviews.js">
     </script>
 

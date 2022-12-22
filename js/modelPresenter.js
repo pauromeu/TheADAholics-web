@@ -16,9 +16,9 @@ function createOptions(menuId, dictionaryUrl) {
 }
 
 // Create the options for each dropdown menu
-createOptions("menu-actors", "../data/actors.json");
-createOptions("menu2", "../data/actors.json");
-createOptions("menu3", "../data/actors.json");
+createOptions("menu-actors", "./data/actors.json");
+createOptions("menu2", "./data/actors.json");
+createOptions("menu3", "./data/actors.json");
 
 // Filter the options in the dropdown menu as the user types
 function filterOptions(menuId, input) {
