@@ -36,20 +36,33 @@
 
   <main id="content" class="main-content" role="main" style="visibility: visible;">
     <h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
-    <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices: what genres to focus on, which director and actors bring the most added value, what budget to spend? We gather in this study movie data from multiple databases including CMU movies, IMDB and Wikipedia. With such a large movie database, we can expect to find some patterns of which feature choices lead to a more successful movie. But then again, what makes a movie successful? From profitability to perenniality, we shall investigate different success indicators and help you create the next Oscar-winning movie. 
+    <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic
+      approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices:
+      what genres to focus on, which director and actors bring the most added value, what budget to spend? We gather in
+      this study movie data from multiple databases including CMU movies, IMDB and Wikipedia. With such a large movie
+      database, we can expect to find some patterns of which feature choices lead to a more successful movie. But then
+      again, what makes a movie successful? From profitability to perenniality, we shall investigate different success
+      indicators and help you create the next Oscar-winning movie.
     </p>
     <hr>
-    <h2>How to we quantify success?</h2>
+    <h2>How do we quantify success?</h2>
     <p>
-     To investigate what makes a movie successful, we need to be able to quantify success. Success of a movie can be very subjective. We thus need to diversify our definitions of success to have a holistic view of our dataset. The following success indicators are considered: 
-     - How well a movie is received?: We base ourselves on the movie ratings from the IMDB database which we weight by the number of votes.
-     - How profitable a movie is?: Overall gross revenue of the movie and profit made
-     - How long a movie will last in time:  Number of monthly connection in 2022 to the movie wikipedia page
+      To investigate what makes a movie successful, we need to be able to quantify success. Success of a movie can be
+      very subjective. We thus need to diversify our definitions of success to have a holistic view of our dataset. The
+      following success indicators are considered:
+    <ul>
+      <li>How well a movie is received? We base ourselves on the movie ratings from the IMDB database which we weight
+        by
+        the number of votes.</li>
+      <li>How profitable a movie is? Overall gross revenue of the movie and profit made</li>
+      <li>How long a movie will last in time? Number of monthly connection in 2022 to the movie wikipedia page
+      </li>
+    </ul>
     The top 20 movies for each of those success features are displayed below.
 
     </p>
-    
-    
+
+
     <!-- Interactive graphs below  -->
     <div id='money_top_20_movies'>
     </div>
@@ -60,26 +73,35 @@
     <div id='top_20_IMDB'>
     </div>
     <p>
-    Taking into account those 4 success features (IMDB rating, gross revenue, profit, wikipedia pageviews), we create a single score for each movie. From there this score is used to compute for each movie feature individual i (actor, director, genre) a feature score weighted by the number of movies in which individual i plays a role. 
+      Taking into account those 4 success features (IMDB rating, gross revenue, profit, wikipedia pageviews), we create
+      a single score for each movie. From there this score is used to compute for each movie feature individual i
+      (actor, director, genre) a feature score weighted by the number of movies in which individual i plays a role.
     </p>
-    
-    
-    
+
+
+
     <hr>
     <h2>Best movie feature choices: </h2>
     <p>
-      Through our data analysis, we were able to extract valuable insight on which features to focus on when making a movie. In order to advise the next hit productor in his choices for his next movie, we investigate below the best choices for several features according to movie genres. For simplicity, we propose such results for the most 15 used genres. 
-
-      While budget may be a priority for horror movies to mesmerize you with special effects, it might be secondary for a romantic comedy. In order to further advise the creator of the next successful movie, we provide in each figure’ title the importance rank for the chosen genre. If this rank is 1, then you may want to focus on this particular feature while rank 8 would be less important for the final success of your movie. 
+      Through our data analysis, we were able to extract valuable insight on which features to focus on when making a
+      movie. In order to advise the next hit productor in his choices for his next movie, we investigate below the best
+      choices for several features according to movie genres. For simplicity, we propose such results for the 15
+      usual genres.
+    </p>
+    <p>
+      While budget may be a priority for horror movies to mesmerize you with special effects, it might be secondary for
+      a romantic comedy. In order to further advise the creator of the next successful movie, we provide in each figure’
+      title the importance rank for the chosen genre. If this rank is 1, then you may want to focus on this particular
+      feature while rank 8 would be less important for the final success of your movie.
 
     </p>
 
-    
+
 
 
 
     <h2 id="actors-directors">Best actors and directors to get a good movie</h2>
-    
+
     <p>Choosing a good cast and director for a movie are both crucial elements of the film-making process, as they can
       greatly impact the quality and success of a film.
     </p>
@@ -97,7 +119,7 @@
       the cast and crew and guide them towards achieving it. A good director also has the ability to bring out the best
       performances from the actors and create a cohesive and compelling story.
     </p>
-    
+
     <label for="image-selector1">
       Select a genre:
     </label>
@@ -107,7 +129,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -119,7 +140,7 @@
       <option value="World-cinema">World cinema</option>
     </select>
 
-    
+
     <div style="display: flex; justify-content: center;">
       <img id="best_actors" src="./figures/best_actors/Action.svg" alt="Best Actors"
         style="max-width: 60%; max-height: 100%; object-fit: contain;">
@@ -134,7 +155,7 @@
       added values of specific collaborations when a minimum of 3 movies have been made together. On the network graphs
       above, we show the top 15 actors and directors according to the genre of your choice. The size of the bubble is
       proportional to the score of the individual while the presence and width of an edge between two individuals
-      symbolizes the added value of their collaboration.
+      symbolizes the added value of their collaboration. If we look at the drama genre for instance, we can see that combining Jack Nicholson and Danny DeVito will be of added value for your next successful dramatic movie. 
     </p>
     <p>
       Overall, the cast of a movie plays a crucial role in its success, and choosing the right actors is an important
@@ -142,7 +163,8 @@
     </p>
 
     <h2 id="genres-complement">How well this genre works with others?</h2>
-        <p>We now investigate the best associations of genres. Having different genres for a movie can be important for a
+
+    <p>We now investigate the best associations of genres. Having different genres for a movie can be important for a
       number of reasons.</p>
     <p>One reason is that it allows the movie to appeal to a wider audience. Different genres appeal to different
       demographics, and by incorporating elements of multiple genres, a movie can attract a larger and more diverse
@@ -156,9 +178,8 @@
       allow it to explore a wider range of themes and ideas.</p>
     <p>As before, we display here a network graph of the best 5 combinations to your chosen genre with an edge width
       proportional to the success of this combination.</p>
-    
-    
-    
+
+
     <label for="image-selector3">
       Select a genre:
     </label>
@@ -168,7 +189,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -180,7 +200,8 @@
       <option value="World-cinema">World cinema</option>
     </select>
 
-    <img id="image2" src="./figures/folder2/image1.jpg" alt="Image 2">
+    <img id="best_genre" src="./figures/best_genre/Action.svg" alt="Genres combination">
+
 
 
     <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the top cinema industry?</h2>
@@ -194,7 +215,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -237,7 +257,7 @@
     <p>
       The graph distinguishing between genres is even less encouraging. Although it shows a timid trend towards
       equality, there is a clear inequality in the number of male and female actors. Moreover, it can be seen that for
-      some genders, the difference is much greater than for others.
+      some genres, the difference is much greater than for others.
     </p>
 
     <p>
@@ -260,7 +280,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -271,7 +290,13 @@
       <option value="Thriller">Thriller</option>
       <option value="World-cinema">World cinema</option>
     </select>
-    <img id="image5" src="./figures/folder2/image1.jpg" alt="Image 2">
+
+    <div style="display: flex; justify-content: center;">
+      <img id="wordclouds_all" src="./figures/wordclouds/special_red_all/Action.png" alt="All words"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+      <img id="wordclouds_best" src="./figures/wordclouds/special_red_best/Action.png" alt="Best words"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+    </div>
 
     <p>A word cloud is a very easy way to quickly grasp the key topics around which revolves a text corpus. In our
       analysis, we use this technique to visualize the main themes addressed by a particular movie genre. We do this
@@ -285,7 +310,7 @@
       different from the rest. it can be argued that a movie’s individual originality is a factor in its success
     </p>
 
-    <h2 id="budget">Let's talk about money. How much you need to spend to get a successful movie?</h2>
+    <h2 id="budget">Let's speak budget now. How much would you need to spend to get a successful movie?</h2>
     <label for="image-selector6">
       Select a genre:
     </label>
@@ -295,7 +320,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -306,7 +330,7 @@
       <option value="Thriller">Thriller</option>
       <option value="World-cinema">World cinema</option>
     </select>
-    <img id="image6" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <img id="budgets" src="./figures/budgets/Action.svg" alt="Budgets">
     <p>An optimal budget is essential when making a movie for a number of reasons. First and foremost, a budget
       determines
       the scope and scale of a film. It determines how much money is available for production costs such as hiring
@@ -351,8 +375,14 @@
         document.getElementById("best_directors").src = "./figures/best_directors/" + selectedValue + ".svg";
         document.getElementById("ethnicity_evolution").src = "./figures/ethnicity_evolution/" + selectedValue + ".svg";
         document.getElementById("gender_evolution").src = "./figures/gender_evolution/" + selectedValue + ".svg";
+
+        document.getElementById("best_genre").src = "./figures/best_genre/" + selectedValue + ".svg";
+        document.getElementById("budgets").src = "./figures/budgets/" + selectedValue + ".svg";
+        document.getElementById("wordclouds_all").src = "./figures/wordclouds/special_red_all/" + selectedValue + ".png";
+        document.getElementById("wordclouds_best").src = "./figures/wordclouds/special_red_best/" + selectedValue + ".png";
       }
     </script>
+
 
     <div>
       <h1 id="create-your-movie">Create your own movie. How successful can you make it?</h1>
@@ -428,12 +458,9 @@
     </script>
 
     <footer class="site-footer">
-      {% if site.github.is_project_page %}
-      <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>
-        is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-      {% endif %}
-      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub
-          Pages</a>.</span>
+      <p>This site has been created by Mehdi, Nikolay, Olivia and Pau, proud members of TheADAholics team.</p>
+      <p>You can find the Github repo used to realize this analysis in <a
+          href="https://github.com/epfl-ada/ada-2022-project-theadaholics">this link</a></p>
     </footer>
   </main>
 </body>
