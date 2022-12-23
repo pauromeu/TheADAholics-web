@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
-  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script> <!-- Copiercoller le truc de gauche -->
+  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
 
 
 </head>
@@ -35,18 +35,21 @@
   </header>
 
   <main id="content" class="main-content" role="main" style="visibility: visible;">
+    <h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
+    <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices: what genres to focus on, which director and actors bring the most added value, what budget to spend? We gather in this study movie data from multiple databases including CMU movies, IMDB and Wikipedia. With such a large movie database, we can expect to find some patterns of which feature choices lead to a more successful movie. But then again, what makes a movie successful? From profitability to perenniality, we shall investigate different success indicators and help you create the next Oscar-winning movie. 
+    </p>
     <hr>
-    <h1 id="what-makes-a-movie-successful-">What makes a movie succesful?</h1>
-    <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic
-      approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices:
-      what genres to focus on, which director and actors bring the most added value, what budget to spend? With such a
-      big movie database, we can expect to find some patterns for which those choices lead to more successful movies.
-      But then again, what makes a movie successful? From profitability to perenniality, we shall investigate different
-      success indicators. Ideally, the goal for our data story would be to draw a generator for the next successful
-      movie: a user would select for instance a genre of interest and we would suggest the ideal combo of actors,
-      director, budget, diversity, etc.</p>
+    <h2>How to we quantify success?</h2>
+    <p>
+     To investigate what makes a movie successful, we need to be able to quantify success. Success of a movie can be very subjective. We thus need to diversify our definitions of success to have a holistic view of our dataset. The following success indicators are considered: 
+     - How well a movie is received?: We base ourselves on the movie ratings from the IMDB database which we weight by the number of votes.
+     - How profitable a movie is?: Overall gross revenue of the movie and profit made
+     - How long a movie will last in time:  Number of monthly connection in 2022 to the movie wikipedia page
+    The top 20 movies for each of those success features are displayed below.
 
-
+    </p>
+    
+    
     <!-- Interactive graphs below  -->
     <div id='money_top_20_movies'>
     </div>
@@ -56,11 +59,19 @@
 
     <div id='top_20_IMDB'>
     </div>
-
     <p>
-      In the world of cinema there are very different genres. In this analysis, we have separated the data according to
-      each genre so that they can be explored independently. So, choose your favorite genre to find out what ingredients
-      its films must have to be a hit.
+    Taking into account those 4 success features (IMDB rating, gross revenue, profit, wikipedia pageviews), we create a single score for each movie. From there this score is used to compute for each movie feature individual i (actor, director, genre) a feature score weighted by the number of movies in which individual i plays a role. 
+    </p>
+    
+    
+    
+    <hr>
+    <h2>Best movie feature choices: </h2>
+    <p>
+      Through our data analysis, we were able to extract valuable insight on which features to focus on when making a movie. In order to advise the next hit productor in his choices for his next movie, we investigate below the best choices for several features according to movie genres. For simplicity, we propose such results for the most 15 used genres. 
+
+      While budget may be a priority for horror movies to mesmerize you with special effects, it might be secondary for a romantic comedy. In order to further advise the creator of the next successful movie, we provide in each figure’ title the importance rank for the chosen genre. If this rank is 1, then you may want to focus on this particular feature while rank 8 would be less important for the final success of your movie. 
+
     </p>
 
     <label for="image-selector1">
@@ -220,7 +231,7 @@
     </p>
 
     <p>
-      The conclusion is that to date, the key to making a succesful film has been to capture a reflection of society.
+      The conclusion is that to date, the key to making a successful film has been to capture a reflection of society.
       Inequalities have crossed the big screen too. However, to show some hope, this study was based on films that are
       at least 10 years old. Today, there is a clear determination on the part of many production companies to increase
       cultural diversity in their productions. How would these charts change today? We leave this question for possible
@@ -264,7 +275,7 @@
       different from the rest. it can be argued that a movie’s individual originality is a factor in its success
     </p>
 
-    <h2 id="budget">Let's talk about money. How much you need to spend to get a succesful movie?</h2>
+    <h2 id="budget">Let's talk about money. How much you need to spend to get a successful movie?</h2>
     <label for="image-selector6">
       Current genre:
     </label>
@@ -334,7 +345,7 @@
     </script>
 
     <div>
-      <h1 id="create-your-movie">Create your own movie. How succesful can you make it?</h1>
+      <h1 id="create-your-movie">Create your own movie. How successful can you make it?</h1>
     </div>
 
 
@@ -376,7 +387,7 @@
         <option value="">---</option>
       </select>
 
-      <h2>Choose the laguange of the original version</h2>
+      <h2>Choose the language of the original version</h2>
       <label for="menu-languages">Original language:</label><br>
       <!-- <input type="text" id="filter5" placeholder="Filter by name"
         oninput="filterOptions('menu-languages', this.value)"> -->
