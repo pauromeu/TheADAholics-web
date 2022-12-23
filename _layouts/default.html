@@ -53,7 +53,7 @@
 
     <div id='top_20_pageviews'>
     </div>
-    
+
     <div id='top_20_IMDB'>
     </div>
 
@@ -179,24 +179,36 @@
 
     <p>Select an option from each dropdown menu:</p>
     <form>
-      <label for="menu-actors">Menu 1:</label><br>
+      <label for="menu-actors">Main Actor:</label><br>
       <input type="text" id="filter-actors" oninput="filterOptions('menu-actors', this.value)">
       <br>
       <select id="menu-actors" name="menu-actors" class="dropdown-menu" onchange="showSum()">
         <option value="">---</option>
       </select>
       <br>
-      <label for="menu2">Menu 2:</label><br>
-      <input type="text" id="filter2" oninput="filterOptions('menu2', this.value)">
+      <label for="menu-directors">Director:</label><br>
+      <input type="text" id="filter2" oninput="filterOptions('menu-directors', this.value)">
       <br>
-      <select id="menu2" name="menu2" class="dropdown-menu" onchange="showSum()">
+      <select id="menu-directors" name="menu-directors" class="dropdown-menu" onchange="showSum()">
         <option value="">---</option>
       </select>
       <br>
-      <label for="menu3">Menu 3:</label><br>
-      <input type="text" id="filter3" oninput="filterOptions('menu3', this.value)">
+      <label for="menu-genres">Genre:</label><br>
+      <input type="text" id="filter3" oninput="filterOptions('menu-genres', this.value)">
       <br>
-      <select id="menu3" name="menu3" class="dropdown-menu" onchange="showSum()">
+      <select id="menu-genres" name="menu-genres" class="dropdown-menu" onchange="showSum()">
+        <option value="">---</option>
+      </select>
+      <label for="menu-countries">Country of production:</label><br>
+      <input type="text" id="filter4" oninput="filterOptions('menu-countries', this.value)">
+      <br>
+      <select id="menu-countries" name="menu-countries" class="dropdown-menu" onchange="showSum()">
+        <option value="">---</option>
+      </select>
+      <label for="menu-languages">Original language:</label><br>
+      <input type="text" id="filter5" oninput="filterOptions('menu-languages', this.value)">
+      <br>
+      <select id="menu-languages" name="menu-languages" class="dropdown-menu" onchange="showSum()">
         <option value="">---</option>
       </select>
     </form>
@@ -210,7 +222,7 @@
 
     <script src="./js/top_20_pageviews.js">
     </script>
-    
+
     <script src="./js/top_20_IMDB.js">
     </script>
 

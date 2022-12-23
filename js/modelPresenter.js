@@ -1,3 +1,7 @@
+const actors_weight = 0.5535388588905334;
+const directors_weight = 0.7363501191139221;
+const offset = -1.6517;
+
 // Define a function to create the dropdown menu options
 function createOptions(menuId, dictionaryUrl) {
     fetch(dictionaryUrl)
@@ -16,9 +20,11 @@ function createOptions(menuId, dictionaryUrl) {
 }
 
 // Create the options for each dropdown menu
-createOptions("menu-actors", "./data/director_score_dict.json");
-createOptions("menu2", "./data/director_score_dict.json");
-createOptions("menu3", "./data/director_score_dict.json");
+createOptions("menu-actors", "./data/actors_score_1000.json");
+createOptions("menu-directors", "./data/directors_score_1000.json");
+createOptions("menu-genres", "./data/genres_weights.json");
+createOptions("menu-countries", "./data/countries_weights.json");
+createOptions("menu-languages", "./data/languages_weights.json");
 
 // Filter the options in the dropdown menu as the user types
 function filterOptions(menuId, input) {
@@ -42,21 +48,31 @@ function showSum() {
     var sum = 0;
     // Get the dictionaries for each dropdown menu
     var data1 = document.getElementById("menu-actors").dictionary;
-    var data2 = document.getElementById("menu2").dictionary;
-    var data3 = document.getElementById("menu3").dictionary;
+    var data2 = document.getElementById("menu-directors").dictionary;
+    var data3 = document.getElementById("menu-genres").dictionary;
+    var data4 = document.getElementById("menu-countries").dictionary;
+    var data5 = document.getElementById("menu-languages").dictionary;
+
+
 
     // Add the values of each dropdown menu
     if (document.getElementById("menu-actors").value !== "") {
-        sum += data1[document.getElementById("menu-actors").value];
+        sum += data1[document.getElementById("menu-actors").value] * actors_weight;
     }
-    if (document.getElementById("menu2").value !== "") {
-        sum += data2[document.getElementById("menu2").value];
+    if (document.getElementById("menu-directors").value !== "") {
+        sum += data2[document.getElementById("menu-directors").value] * directors_weight;
     }
-    if (document.getElementById("menu3").value !== "") {
-        sum += data3[document.getElementById("menu3").value];
+    if (document.getElementById("menu-genres").value !== "") {
+        sum += data3[document.getElementById("menu-genres").value];
+    }
+    if (document.getElementById("menu-countries").value !== "") {
+        sum += data4[document.getElementById("menu-countries").value];
+    }
+    if (document.getElementById("menu-languages").value !== "") {
+        sum += data5[document.getElementById("menu-languages").value];
     }
 
     // Display the sum
     console.log(sum)
-    document.getElementById("sum").innerHTML = "Sum: " + sum;
+    document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
 }
