@@ -273,7 +273,7 @@
 
     <h2 id="top-words">What are the main topics of the top movies?</h2>
     <label for="image-selector5">
-      Select a genre:
+      Current selected genre:
     </label>
     <select id="image-selector5" onchange="displayImages(this)" class="dropdown-menu">
       <option value="Action">Action</option>
@@ -321,7 +321,7 @@
 
     <h2 id="budget">Let's speak budget now. How much would you need to spend to get a successful movie?</h2>
     <label for="image-selector6">
-      Select a genre:
+      Current selected genre:
     </label>
     <select id="image-selector6" onchange="displayImages(this)" class="dropdown-menu">
       <option value="Action">Action</option>
@@ -381,7 +381,46 @@
 
 
 
+    <h2 id="release_month">When is the best month to release your movie?</h2>
+    <p>The release month of a movie can have a significant impact on its success. In general, the summer and holiday
+      seasons are considered the most lucrative times for movie releases, as people are more likely to go to the cinema
+      during these times.</p>
+    <p>The summer season, in particular, is considered a prime time for movie releases, as it falls during the school
+      holidays and people tend to have more free time to go to the cinema. Major blockbuster movies are often released
+      during the summer in an attempt to capitalize on this increased audience.</p>
+    <p> The holiday season, which includes Thanksgiving, Christmas, and New Year's, is also a popular time for movie
+      releases, as people often have time off work and may be looking for entertainment during the festive period.</p>
+    <p>However, releasing a movie outside of these peak periods can also have its benefits. For example, a movie
+      released
+      in the fall or spring may not face as much competition from other big releases, and may therefore have a better
+      chance of standing out. Additionally, a movie released in a non-peak period may also benefit from less competition
+      for cinema screens, allowing it to be shown in more theaters.</p>
 
+
+
+
+
+
+    <label for="image-selector7">
+      Current selected genre:
+    </label>
+    <select id="image-selector7" onchange="displayImages(this)" class="dropdown-menu">
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
+    </select>
+    <img id="best_release_month" src="./figures/best_release_month/Action.svg" alt="Budgets">
 
 
 
@@ -409,6 +448,7 @@
         document.getElementById("budgets").src = "./figures/budgets/" + selectedValue + ".svg";
         document.getElementById("wordclouds_all").src = "./figures/wordclouds/special_red_all/" + selectedValue + ".png";
         document.getElementById("wordclouds_best").src = "./figures/wordclouds/special_red_best/" + selectedValue + ".png";
+        document.getElementById("best_release_month").src = "./figures/best_release_month/" + selectedValue + ".svg";
       }
     </script>
 
