@@ -1,6 +1,6 @@
 const actors_weight = 0.5535388588905334;
 const directors_weight = 0.7363501191139221;
-const offset = -2.4316546535017274;
+const offset = -2.0316546535017274;
 
 // Define a function to create the dropdown menu options
 function createOptions(menuId, dictionaryUrl) {
