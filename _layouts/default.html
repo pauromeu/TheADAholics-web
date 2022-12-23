@@ -128,7 +128,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -163,6 +162,7 @@
     </p>
 
     <h2 id="genres-complement">How well this genre works with others?</h2>
+
     <p>We now investigate the best associations of genres. Having different genres for a movie can be important for a
       number of reasons.</p>
     <p>One reason is that it allows the movie to appeal to a wider audience. Different genres appeal to different
@@ -179,7 +179,6 @@
       proportional to the success of this combination.</p>
 
 
-
     <label for="image-selector3">
       Select a genre:
     </label>
@@ -189,7 +188,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -201,7 +199,8 @@
       <option value="World-cinema">World cinema</option>
     </select>
 
-    <img id="image2" src="./figures/folder2/image1.jpg" alt="Image 2">
+    <img id="best_genre" src="./figures/best_genre/Action.svg" alt="Genres combination">
+
 
 
     <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the top cinema industry?</h2>
@@ -215,7 +214,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -281,7 +279,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -292,7 +289,13 @@
       <option value="Thriller">Thriller</option>
       <option value="World-cinema">World cinema</option>
     </select>
-    <img id="image5" src="./figures/folder2/image1.jpg" alt="Image 2">
+
+    <div style="display: flex; justify-content: center;">
+      <img id="wordclouds_all" src="./figures/wordclouds/special_red_all/Action.png" alt="All words"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+      <img id="wordclouds_best" src="./figures/wordclouds/special_red_best/Action.png" alt="Best words"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+    </div>
 
     <p>A word cloud is a very easy way to quickly grasp the key topics around which revolves a text corpus. In our
       analysis, we use this technique to visualize the main themes addressed by a particular movie genre. We do this
@@ -316,7 +319,6 @@
       <option value="Black-and-white">Black and White</option>
       <option value="Comedy">Comedy</option>
       <option value="Crime-Fiction">Crime Fiction</option>
-      <option value="Crime">Crime</option>
       <option value="Documentary">Documentary</option>
       <option value="Drama">Drama</option>
       <option value="Family-Film">Familiar</option>
@@ -327,7 +329,7 @@
       <option value="Thriller">Thriller</option>
       <option value="World-cinema">World cinema</option>
     </select>
-    <img id="image6" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <img id="budgets" src="./figures/budgets/Action.svg" alt="Budgets">
     <p>An optimal budget is essential when making a movie for a number of reasons. First and foremost, a budget
       determines
       the scope and scale of a film. It determines how much money is available for production costs such as hiring
@@ -372,6 +374,11 @@
         document.getElementById("best_directors").src = "./figures/best_directors/" + selectedValue + ".svg";
         document.getElementById("ethnicity_evolution").src = "./figures/ethnicity_evolution/" + selectedValue + ".svg";
         document.getElementById("gender_evolution").src = "./figures/gender_evolution/" + selectedValue + ".svg";
+
+        document.getElementById("best_genre").src = "./figures/best_genre/" + selectedValue + ".svg";
+        document.getElementById("budgets").src = "./figures/budgets/" + selectedValue + ".svg";
+        document.getElementById("wordclouds_all").src = "./figures/wordclouds/special_red_all/" + selectedValue + ".png";
+        document.getElementById("wordclouds_best").src = "./figures/wordclouds/special_red_best/" + selectedValue + ".png";
       }
     </script>
 
