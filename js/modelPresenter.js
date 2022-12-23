@@ -46,6 +46,8 @@ function filterOptions(menuId, input) {
 // Update the sum when the selected option is changed
 function showSum() {
     var sum = 0;
+    var show = true;
+
     // Get the dictionaries for each dropdown menu
     var data1 = document.getElementById("menu-actors").dictionary;
     var data2 = document.getElementById("menu-directors").dictionary;
@@ -53,26 +55,33 @@ function showSum() {
     var data4 = document.getElementById("menu-countries").dictionary;
     var data5 = document.getElementById("menu-languages").dictionary;
 
-
-
     // Add the values of each dropdown menu
     if (document.getElementById("menu-actors").value !== "") {
         sum += data1[document.getElementById("menu-actors").value] * actors_weight;
-    }
+    } else { show = false }
     if (document.getElementById("menu-directors").value !== "") {
         sum += data2[document.getElementById("menu-directors").value] * directors_weight;
-    }
+    } else { show = false }
     if (document.getElementById("menu-genres").value !== "") {
         sum += data3[document.getElementById("menu-genres").value];
-    }
+    } else { show = false }
     if (document.getElementById("menu-countries").value !== "") {
         sum += data4[document.getElementById("menu-countries").value];
-    }
+    } else { show = false }
     if (document.getElementById("menu-languages").value !== "") {
         sum += data5[document.getElementById("menu-languages").value];
-    }
+    } else { show = false }
 
     // Display the sum
     console.log(sum)
-    document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
+    if (show) {
+        //document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
+        score = sum + offset;
+        const integerPart = Math.floor(score);
+        const decimalPart = score.toFixed(3).split('.')[1];
+
+        document.querySelector('.integer').textContent = integerPart;
+        document.querySelector('.decimal').textContent = decimalPart;
+    } else
+        document.getElementById("sum").innerHTML = "Fill all the options to get your score!";
 }

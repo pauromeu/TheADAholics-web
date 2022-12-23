@@ -381,6 +381,30 @@ a {
   }
 }
 
+.score {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #C70039;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.score .integer {
+  font-size: 70px;
+  line-height: 24px;
+}
+
+.score .decimal {
+  font-size: 30px;
+  line-height: 24px;
+}
+
 .site-footer-owner {
   display: block;
   font-weight: bold;
