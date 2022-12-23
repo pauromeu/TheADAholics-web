@@ -86,6 +86,8 @@
     </select>
 
 
+
+
     <h2 id="actors-directors">Best actors and directors to get a good movie</h2>
     <div style="display: flex; justify-content: center;">
       <img id="best_actors" src="./figures/best_actors/Action.svg" alt="Best Actors"
@@ -124,6 +126,28 @@
     </p>
 
     <h2 id="genres-complement">How well this genre works with others?</h2>
+    <label for="image-selector3">
+      Current genre:
+    </label>
+    <select id="image-selector3" onchange="displayImages(this)" class="dropdown-menu">
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Silent-Film">Silent</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
+    </select>
+
     <img id="image2" src="./figures/folder2/image1.jpg" alt="Image 2">
     <p>We now investigate the best associations of genres. Having different genres for a movie can be important for a
       number of reasons.</p>
@@ -141,6 +165,29 @@
       proportional to the success of this combination.</p>
 
     <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the top cinema industry?</h2>
+
+    <label for="image-selector4">
+      Current genre:
+    </label>
+    <select id="image-selector4" onchange="displayImages(this)" class="dropdown-menu">
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Silent-Film">Silent</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
+    </select>
+
     <div style="display: flex; justify-content: center;">
       <img id="ethnicity_evolution" src="./figures/ethnicity_evolution/Action.svg" alt="Etnicity evolution"
         style="max-width: 60%; max-height: 100%; object-fit: contain;">
@@ -159,12 +206,91 @@
 
 
     <h2 id="top-words">What are the main topics of the top movies?</h2>
+    <label for="image-selector5">
+      Current genre:
+    </label>
+    <select id="image-selector5" onchange="displayImages(this)" class="dropdown-menu">
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Silent-Film">Silent</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
+    </select>
     <img id="image5" src="./figures/folder2/image1.jpg" alt="Image 2">
-    <p>Some text goes here</p>
+
+    <p>A word cloud is a very easy way to quickly grasp the key topics around which revolves a text corpus. In our
+      analysis, we use this technique to visualize the main themes addressed by a particular movie genre. We do this
+      first
+      with a random sample from all the movies in that genre, then we draw a sample from a subset made of the most
+      successful movies in the same genre, to see if successful movies really stand above the rest when it comes to the
+      topics they address.</p>
+    <p>
+      CRITIQUE: however, it might be that successful movies don’t have much in common between each other although they
+      are
+      different from the rest. it can be argued that a movie’s individual originality is a factor in its success
+    </p>
 
     <h2 id="budget">Let's talk about money. How much you need to spend to get a succesful movie?</h2>
+    <label for="image-selector6">
+      Current genre:
+    </label>
+    <select id="image-selector6" onchange="displayImages(this)" class="dropdown-menu">
+      <option value="Action">Action</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Black-and-white">Black and White</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Crime-Fiction">Crime Fiction</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentary">Documentary</option>
+      <option value="Drama">Drama</option>
+      <option value="Family-Film">Familiar</option>
+      <option value="Horror">Horror</option>
+      <option value="Indie">Indie</option>
+      <option value="Romance-Film">Romance</option>
+      <option value="Short-Film">Short</option>
+      <option value="Silent-Film">Silent</option>
+      <option value="Thriller">Thriller</option>
+      <option value="World-cinema">World cinema</option>
+    </select>
     <img id="image6" src="./figures/folder1/image1.jpg" alt="Image 1">
-    <p>Some text goes here</p>
+    <p>An optimal budget is essential when making a movie for a number of reasons. First and foremost, a budget
+      determines
+      the scope and scale of a film. It determines how much money is available for production costs such as hiring
+      actors,
+      renting equipment, and paying for locations and sets. A larger budget allows for more resources to be invested in
+      these areas, which can lead to a higher-quality film.</p>
+    <p>On the other hand, a smaller budget may limit the scope of the film and require filmmakers to be more creative
+      and
+      resourceful in order to achieve their vision. While it is certainly possible to make a great film on a small
+      budget,
+      it requires careful planning and efficient use of resources.</p>
+    <p>In addition to determining the scope and scale of a film, a budget also plays a critical role in the marketing
+      and
+      distribution of a movie. Marketing and distribution costs can be significant, and having an optimal budget can
+      help
+      ensure that a film reaches a wide audience and generates a return on investment.</p>
+    <p>Overall, an optimal budget is crucial for ensuring that a film has the resources it needs to be successful both
+      creatively and financially. It allows filmmakers to achieve their vision and bring their stories to life, and it
+      helps ensure that a film can reach a wide audience and generate a return on investment.</p>
+
+
+
+
+
+
+
+
 
     <script>
       function displayImages(element) {
