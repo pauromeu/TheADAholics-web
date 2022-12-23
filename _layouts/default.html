@@ -13,7 +13,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   {% include head-custom.html %}
-  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script> <!-- Copiercoller le truc de gauche -->
+  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
 
 
 </head>
@@ -35,8 +35,7 @@
   </header>
 
   <main id="content" class="main-content" role="main" style="visibility: visible;">
-    <hr>
-    <h1 id="what-makes-a-movie-successful-">What makes a movie succesful?</h1>
+    <h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
     <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic
       approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices:
       what genres to focus on, which director and actors bring the most added value, what budget to spend? With such a
@@ -45,8 +44,12 @@
       success indicators. Ideally, the goal for our data story would be to draw a generator for the next successful
       movie: a user would select for instance a genre of interest and we would suggest the ideal combo of actors,
       director, budget, diversity, etc.</p>
-
-
+    <hr>
+    <p>
+      ADD TITLE : "How to we quantify success?"
+    </p>
+    
+    
     <!-- Interactive graphs below  -->
     <div id='money_top_20_movies'>
     </div>
@@ -56,7 +59,7 @@
 
     <div id='top_20_IMDB'>
     </div>
-
+    <hr>
     <p>
       In the world of cinema there are very different genres. In this analysis, we have separated the data according to
       each genre so that they can be explored independently. So, choose your favorite genre to find out what ingredients
