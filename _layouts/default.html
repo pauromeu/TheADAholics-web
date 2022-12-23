@@ -185,14 +185,6 @@
       }
     </script>
 
-
-
-
-
-
-
-
-
     <div>
       <h1 id="create-your-movie">Create your own movie. How succesful can you make it?</h1>
     </div>
@@ -200,36 +192,47 @@
 
     <p>Select an option from each dropdown menu:</p>
     <form>
+      <h2>Choose the main actor</h2>
       <label for="menu-actors">Main Actor:</label><br>
-      <input type="text" id="filter-actors" oninput="filterOptions('menu-actors', this.value)">
+      <input type="text" id="filter-actors" placeholder="Filter by name"
+        oninput="filterOptions('menu-actors', this.value)">
       <br>
-      <select id="menu-actors" name="menu-actors" class="dropdown-menu" onchange="showSum()">
+      <select id="menu-actors" name="menu-actors" class="dropdown-menu" onchange="showScore()">
         <option value="">---</option>
       </select>
-      <br>
+
+
+      <h2>Choose the director</h2>
       <label for="menu-directors">Director:</label><br>
-      <input type="text" id="filter2" oninput="filterOptions('menu-directors', this.value)">
+      <input type="text" id="filter2" placeholder="Filter by name"
+        oninput="filterOptions('menu-directors', this.value)">
       <br>
-      <select id="menu-directors" name="menu-directors" class="dropdown-menu" onchange="showSum()">
+      <select id="menu-directors" name="menu-directors" class="dropdown-menu" onchange="showScore()">
         <option value="">---</option>
       </select>
-      <br>
+
+
+      <h2>Choose the genre of your movie</h2>
       <label for="menu-genres">Genre:</label><br>
-      <input type="text" id="filter3" oninput="filterOptions('menu-genres', this.value)">
-      <br>
-      <select id="menu-genres" name="menu-genres" class="dropdown-menu" onchange="showSum()">
+      <!-- <input type="text" id="filter3" placeholder="Filter by name" oninput="filterOptions('menu-genres', this.value)"> -->
+      <select id="menu-genres" name="menu-genres" class="dropdown-menu" onchange="showScore()">
         <option value="">---</option>
       </select>
+
+
+      <h2>Where are you going to produce the movie?</h2>
       <label for="menu-countries">Country of production:</label><br>
-      <input type="text" id="filter4" oninput="filterOptions('menu-countries', this.value)">
-      <br>
-      <select id="menu-countries" name="menu-countries" class="dropdown-menu" onchange="showSum()">
+      <!-- <input type="text" id="filter4" placeholder="Filter by name" -->
+      <!-- oninput="filterOptions('menu-countries', this.value)"> -->
+      <select id="menu-countries" name="menu-countries" class="dropdown-menu" onchange="showScore()">
         <option value="">---</option>
       </select>
+
+      <h2>Choose the laguange of the original version</h2>
       <label for="menu-languages">Original language:</label><br>
-      <input type="text" id="filter5" oninput="filterOptions('menu-languages', this.value)">
-      <br>
-      <select id="menu-languages" name="menu-languages" class="dropdown-menu" onchange="showSum()">
+      <!-- <input type="text" id="filter5" placeholder="Filter by name"
+        oninput="filterOptions('menu-languages', this.value)"> -->
+      <select id="menu-languages" name="menu-languages" class="dropdown-menu" onchange="showScore()">
         <option value="">---</option>
       </select>
     </form>
@@ -238,6 +241,10 @@
     <div class="score">
       <span class="integer"></span>.<span class="decimal"></span>
     </div>
+
+    <p style="text-align: center;">Your movie is going to be in the top</p>
+    <p style="text-align: center;" id="top-per">?%</p>
+    <p style="text-align: center;">of all history of cinema</p>
 
     <script src="./js/modelPresenter.js">
     </script>

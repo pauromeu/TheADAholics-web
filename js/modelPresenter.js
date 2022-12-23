@@ -1,6 +1,6 @@
 const actors_weight = 0.5535388588905334;
 const directors_weight = 0.7363501191139221;
-const offset = -1.6517;
+const offset = -2.4316546535017274;
 
 // Define a function to create the dropdown menu options
 function createOptions(menuId, dictionaryUrl) {
@@ -43,8 +43,29 @@ function filterOptions(menuId, input) {
     }
 }
 
+async function getTopPercentage(number) {
+    // read the JSON file and parse it into an object
+    const dictionary = await fetch('./data/scores.json')
+        .then(response => response.json())
+        .then(data => data);
+
+    // sort the keys in ascending order
+    const keys = Object.keys(dictionary).sort((a, b) => dictionary[a] - dictionary[b]);
+    // find th e key with a value equal to or greater than the given number
+    let topPercentage = null;
+    for (const key of keys) {
+        if (dictionary[key] >= number) {
+            topPercentage = key;
+            break;
+        }
+    }
+
+    // return the top percentage
+    return topPercentage;
+}
+
 // Update the sum when the selected option is changed
-function showSum() {
+async function showScore() {
     var sum = 0;
     var show = true;
 
@@ -77,12 +98,19 @@ function showSum() {
     if (show) {
         //document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
         console.log(sum)
-        score = sum + offset;
+        score = Math.min(sum + offset, 10.000);
+        const topPercentage = await getTopPercentage(score);
+        console.log("TOP: ", topPercentage);
         const integerPart = Math.floor(score);
         const decimalPart = score.toFixed(3).split('.')[1];
 
         document.querySelector('.integer').textContent = integerPart;
         document.querySelector('.decimal').textContent = decimalPart;
+        document.getElementById("top-per").innerHTML = topPercentage;
+        if (score != 10)
+            document.getElementById("sum").innerHTML = "Keep changing parameters to try to improve your score!";
+        else
+            document.getElementById("sum").innerHTML = "Wow! Your movie is going to be very succesful!";
     } else {
         document.getElementById("sum").innerHTML = "Fill all the options to get your score!!";
     }
