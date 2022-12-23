@@ -83,5 +83,5 @@ function showSum() {
         document.querySelector('.integer').textContent = integerPart;
         document.querySelector('.decimal').textContent = decimalPart;
     } else
-        document.getElementById("sum").innerHTML = "Fill all the options to get your score!";
+        document.getElementById("sum").innerHTML = "Fill all the options to get your score!!";
 }
