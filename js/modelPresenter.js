@@ -111,6 +111,8 @@ async function showScore() {
             document.getElementById("sum").innerHTML = "Wow! Your movie is going to be very succesful!";
         else if (score == 0.000)
             document.getElementById("sum").innerHTML = "We are sorry to tell you that your movie is very bad :( \n Why don't you try using a good actress (like Jennifer Aninston) with a good director (like Clint Eastwood)? ";
+        else if (score < 5.000)
+            document.getElementById("sum").innerHTML = "Your movie is not very good. Why don't you try using famous actors and directors?";
         else
             document.getElementById("sum").innerHTML = "Keep changing parameters to try to improve your score!";
     } else {
