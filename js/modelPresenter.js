@@ -73,15 +73,18 @@ function showSum() {
     } else { show = false }
 
     // Display the sum
-    console.log(sum)
+
     if (show) {
         //document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
+        console.log(sum)
         score = sum + offset;
         const integerPart = Math.floor(score);
         const decimalPart = score.toFixed(3).split('.')[1];
 
         document.querySelector('.integer').textContent = integerPart;
         document.querySelector('.decimal').textContent = decimalPart;
-    } else
+    } else {
         document.getElementById("sum").innerHTML = "Fill all the options to get your score!!";
+    }
+
 }
