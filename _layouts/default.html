@@ -36,7 +36,7 @@
 
   <main id="content" class="main-content" role="main" style="visibility: visible;">
     <hr>
-    <h1 id="what-makes-a-movie-successful-">What makes a movie successful?</h1>
+    <h1 id="what-makes-a-movie-successful-">What makes a movie succesful?</h1>
     <p>What makes a movie successful? While this question may seem like a low-hanging fruit, it requires a very holistic
       approach. A good film should not only make use of the 7th Art but of all seven Arts. A movie implies many choices:
       what genres to focus on, which director and actors bring the most added value, what budget to spend? With such a
@@ -140,16 +140,30 @@
     <p>As before, we display here a network graph of the best 5 combinations to your chosen genre with an edge width
       proportional to the success of this combination.</p>
 
-    <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the cinema industry?</h2>
-    <img id="image5" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <h2 id="ethnicity-gender">Etnicity and gender equality. How unfair is the top cinema industry?</h2>
+    <div style="display: flex; justify-content: center;">
+      <img id="ethnicity_evolution" src="./figures/ethnicity_evolution/Action.svg" alt="Etnicity evolution"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+      <img id="gender_evolution" src="./figures/gender_evolution/Action.svg" alt="Gender evolution"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+    </div>
     <p>Some text goes here</p>
+    <p>Some text goes here</p>
+    <div style="display: flex; justify-content: center;">
+      <img id="ethnicity_evolution_all" src="./figures/ethnicity_evolution/All.svg" alt="Etnicity evolution all genres"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+      <img id="gender_evolution_all" src="./figures/gender_evolution/All.svg" alt="Gender evolution all genres"
+        style="max-width: 60%; max-height: 100%; object-fit: contain;">
+    </div>
+
+
 
     <h2 id="top-words">What are the main topics of the top movies?</h2>
-    <img id="image4" src="./figures/folder2/image1.jpg" alt="Image 2">
+    <img id="image5" src="./figures/folder2/image1.jpg" alt="Image 2">
     <p>Some text goes here</p>
 
     <h2 id="budget">Let's talk about money. How much you need to spend to get a succesful movie?</h2>
-    <img id="image3" src="./figures/folder1/image1.jpg" alt="Image 1">
+    <img id="image6" src="./figures/folder1/image1.jpg" alt="Image 1">
     <p>Some text goes here</p>
 
     <script>
@@ -166,6 +180,8 @@
         // Update the src attributes of the images
         document.getElementById("best_actors").src = "./figures/best_actors/" + selectedValue + ".svg";
         document.getElementById("best_directors").src = "./figures/best_directors/" + selectedValue + ".svg";
+        document.getElementById("ethnicity_evolution").src = "./figures/ethnicity_evolution/" + selectedValue + ".svg";
+        document.getElementById("gender_evolution").src = "./figures/gender_evolution/" + selectedValue + ".svg";
       }
     </script>
 
