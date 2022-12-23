@@ -98,7 +98,7 @@ async function showScore() {
     if (show) {
         //document.getElementById("sum").innerHTML = "Sum: " + (sum + offset);
         console.log(sum)
-        score = Math.min(sum + offset, 10.000);
+        score = Math.max(Math.min(sum + offset, 10.000), 0.000);
         const topPercentage = await getTopPercentage(score);
         console.log("TOP: ", topPercentage);
         const integerPart = Math.floor(score);
@@ -107,10 +107,12 @@ async function showScore() {
         document.querySelector('.integer').textContent = integerPart;
         document.querySelector('.decimal').textContent = decimalPart;
         document.getElementById("top-per").innerHTML = topPercentage;
-        if (score != 10)
-            document.getElementById("sum").innerHTML = "Keep changing parameters to try to improve your score!";
-        else
+        if (score == 10.000)
             document.getElementById("sum").innerHTML = "Wow! Your movie is going to be very succesful!";
+        else if (score == 0.000)
+            document.getElementById("sum").innerHTML = "We are sorry to tell you that your movie is very bad :( \n Why don't you try using a good actress (like Jennifer Aninston) with a good director (like Clint Eastwood)? ";
+        else
+            document.getElementById("sum").innerHTML = "Keep changing parameters to try to improve your score!";
     } else {
         document.getElementById("sum").innerHTML = "Fill all the options to get your score!!";
     }
